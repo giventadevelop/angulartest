@@ -1,0 +1,45 @@
+<p>This is the about view.</p>
+<form name="myForm" ng-controller="AboutCtrl">
+	<label>Value1: <!-- <input id="chk1" type="checkbox"
+		ng-disabled="{{checkboxModel.value1}}" ng-model="checkboxModel.value1"> -->
+
+		<input id="chk1" type="checkbox" ng-model="checkboxModel.value1"
+		ng-change="updateTotal()">
+
+	</label><br /> <label>Value2: <input type="checkbox"
+		ng-model="checkboxModel.value2" ng-true-value="'YES'"
+		ng-false-value="'NO'">
+	</label><br />
+	<tt>value1 = {{checkboxModel.value1}}</tt>
+	<br />
+	<tt>value2 = {{checkboxModel.value2}}</tt>
+	<br />
+
+	<div ng-show="loadingSpinner">
+		<img ng-src="images/spinner-gif.gif" alt="spinnerloader" />
+		
+	</div>
+loadingSpinner  -   {{loadingSpinner}}
+	<div class="container">
+
+		<table>
+			<tr ng-repeat="item in awesomeThings">
+				<td><label>{{item}}</label> <input id="id-{{$index+1}}"
+					type="checkbox" 
+					data-ng-click="disableCheck($event)">
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div class="container">
+		<table>
+			<tr>
+				<td><label>Image Loader</label> <input id="imgid" type="checkbox"
+					data-ng-click="showLoad()"></td>
+			</tr>
+		</table>
+	</div>
+
+</form>
